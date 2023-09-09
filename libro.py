@@ -12,10 +12,21 @@ libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0,
 def nuevo_libro():
     print("REGISTRAR NUEVO LIBRO")
     codigo_libro = generar()
+
     titulo_libro = str(input("\nIngrese el titulo: "))
+
     autor_libro = str(input("\nIngrese el autor: "))
+
     cantidad_ejemplares = int(input("\nIngrese la cantidad de ejemplares existentes: "))
+    while cantidad_ejemplares < 0:
+        print("Por favor ingrese una cantidad valida.")
+        cantidad_ejemplares = int(input("\nIngrese la cantidad de ejemplares existentes: "))
+
     cantidad_ejprestados = int(input("\nIngrese la cantidad de ejemplares prestados: "))
+    while cantidad_ejprestados < 0:
+        print("Por favor ingrese una cantidad valida.")
+        cantidad_ejprestados = int(input("\nIngrese la cantidad de ejemplares prestados: "))
+
     libro_nuevo = {
         'cod': codigo_libro, 
         'cant_ej_ad': cantidad_ejemplares,
